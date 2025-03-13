@@ -1,0 +1,24 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(45, 47, 59);
+    background-image: url('../bg-texture.png');
+}
+
+.loader {
+    width: 120px; /* Adjust size */
+    height: 120px;
+    animation: zoom-in 1.2s ease-in-out infinite alternate; /* Apply zoom animation */
+}
+
+  /* Zoom-in animation */
+@keyframes zoom-in {
+    0% {
+      transform: scale(1); /* Normal size */
+    }
+    100% {
+      transform: scale(2.3); /* Zoom in */
+    }
+}

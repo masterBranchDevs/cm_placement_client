@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* hiding scrollbar  */
+::-webkit-scrollbar{
+    display: none;
+
+}
+
+body{
+    background-image: url('./bg-texture.png');
+    background-color: rgba(25, 36, 44, 0.945) !important;
+    /* padding-left: 2%;
+    padding-right: 2%; */
+}
