@@ -50,7 +50,7 @@ const SplitLayout = () => {
         }
 
         try {
-            const response = await fetch(`${config.apiUrl}/api/cm/apply_job/form`, {
+            const response = await fetch(`${config.apiUrl}api/cm/apply_job/form`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -109,7 +109,7 @@ const SplitLayout = () => {
         }
 
         try {
-            const response = await fetch(`${config.apiUrl}/api/cm/company/inquiry`, {
+            const response = await fetch(`${config.apiUrl}api/cm/company/inquiry`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
