@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import config from "../../config"
+
 const Footer = () => {
     const [visitorCount, setVisitorCount] = useState(0);
 
     useEffect(() => {
         const fetchVisitorCount = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/visitors/count');
+                const response = await axios.get(`${config.apiUrl}api/visitors/count`);
                 setVisitorCount(response.data.count);
             } catch (error) {
                 console.error('Error fetching visitor count:', error);
@@ -16,7 +18,7 @@ const Footer = () => {
 
         const incrementVisitorCount = async () => {
             try {
-                await axios.post('http://localhost:5000/api/visitors/increment');
+                await axios.post(`${config.apiUrl}api/visitors/increment`);
                 fetchVisitorCount();
             } catch (error) {
                 console.error('Error incrementing visitor count:', error);

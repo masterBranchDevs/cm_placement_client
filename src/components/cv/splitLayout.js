@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 // import FETCH_ALL_JOBS from '../../config'
 
+import config from "../../config"
+
 const SplitLayout = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const jobsPerPage = 5;
@@ -15,7 +17,7 @@ const SplitLayout = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/cm/jobs/all_jobs')
+        fetch(`${config.apiUrl}api/job`)
             .then((res) => res.json())
             .then((data) => {
                 console.log("Fetched jobs:", data);
@@ -48,7 +50,7 @@ const SplitLayout = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/cm/apply_job/form', {
+            const response = await fetch(`${config.apiUrl}/api/cm/apply_job/form`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -107,7 +109,7 @@ const SplitLayout = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/cm/company/inquiry', {
+            const response = await fetch(`${config.apiUrl}/api/cm/company/inquiry`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
